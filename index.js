@@ -4,7 +4,7 @@
 //import mysql2 library
 const mysql = require('mysql2');
 
-//connect to database
+//connect to database. 'connection' is used in docs. 'db' was selected here.
 const db = mysql.createConnection({
     host: '34.170.135.140',
     user: 'root',
@@ -18,8 +18,7 @@ db.query('SELECT * FROM Books_do', (err, results) => {
         console.log(err)
     } //output results
     console.log(results)
-})
+    db.end()
+});
 
-
-
-
+//db.end ends connected to database.
